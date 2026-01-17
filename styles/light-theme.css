@@ -1,0 +1,294 @@
+/* Task Flow - Light Mode Stylesheet */
+
+/* Root Variables */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-background-color: #F8F9FA;
+    
+    /* Color Palette */
+    -fx-primary: #4A90E2;
+    -fx-primary-dark: #3A7BC8;
+    -fx-secondary: #6C757D;
+    -fx-success: #6BCB77;
+    -fx-danger: #FF6B6B;
+    -fx-warning: #FFD93D;
+    
+    -fx-bg-primary: #FFFFFF;
+    -fx-bg-secondary: #F8F9FA;
+    -fx-bg-tertiary: #E9ECEF;
+    
+    -fx-text-primary: #212529;
+    -fx-text-secondary: #6C757D;
+    -fx-text-light: #ADB5BD;
+    
+    -fx-border-color: #DEE2E6;
+    -fx-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Main Container */
+.main-container {
+    -fx-background-color: -fx-bg-secondary;
+    -fx-padding: 20;
+}
+
+/* Header Section */
+.header {
+    -fx-background-color: -fx-bg-primary;
+    -fx-padding: 24 32;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, -fx-shadow, 10, 0, 0, 2);
+}
+
+.greeting-label {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.subgreeting-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: -fx-text-secondary;
+}
+
+/* Task Card */
+.task-card {
+    -fx-background-color: -fx-bg-primary;
+    -fx-background-radius: 12;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, -fx-shadow, 8, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.task-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 12, 0, 0, 4);
+    -fx-translate-y: -2;
+}
+
+.task-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-text-primary;
+}
+
+.task-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: -fx-text-secondary;
+    -fx-wrap-text: true;
+}
+
+.task-meta {
+    -fx-font-size: 12px;
+    -fx-text-fill: -fx-text-light;
+}
+
+/* Priority Badge */
+.priority-badge {
+    -fx-background-radius: 12;
+    -fx-padding: 4 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.priority-high {
+    -fx-background-color: -fx-danger;
+}
+
+.priority-medium {
+    -fx-background-color: -fx-warning;
+}
+
+.priority-low {
+    -fx-background-color: -fx-success;
+}
+
+/* Status Badge */
+.status-badge {
+    -fx-background-radius: 12;
+    -fx-padding: 4 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.status-pending {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: white;
+}
+
+.status-in-progress {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: white;
+}
+
+.status-completed {
+    -fx-background-color: -fx-success;
+    -fx-text-fill: white;
+}
+
+/* Buttons */
+.btn {
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+.btn-primary {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: white;
+}
+
+.btn-primary:hover {
+    -fx-background-color: -fx-primary-dark;
+}
+
+.btn-secondary {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: white;
+}
+
+.btn-success {
+    -fx-background-color: -fx-success;
+    -fx-text-fill: white;
+}
+
+.btn-danger {
+    -fx-background-color: -fx-danger;
+    -fx-text-fill: white;
+}
+
+/* Floating Action Button */
+.fab {
+    -fx-background-color: -fx-primary;
+    -fx-background-radius: 28;
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-max-width: 56;
+    -fx-max-height: 56;
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 12, 0, 0, 4);
+}
+
+.fab:hover {
+    -fx-background-color: -fx-primary-dark;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 16, 0, 0, 6);
+}
+
+/* Input Fields */
+.text-field, .text-area {
+    -fx-background-color: -fx-bg-primary;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: -fx-primary;
+    -fx-border-width: 2;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: -fx-bg-primary;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+/* Date Picker */
+.date-picker {
+    -fx-background-color: -fx-bg-primary;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+}
+
+/* Progress Bar */
+.progress-bar {
+    -fx-background-radius: 8;
+}
+
+.progress-bar .bar {
+    -fx-background-color: -fx-primary;
+    -fx-background-radius: 8;
+    -fx-padding: 4;
+}
+
+/* CheckBox */
+.check-box {
+    -fx-font-size: 14px;
+}
+
+.check-box .box {
+    -fx-background-color: -fx-bg-primary;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: -fx-primary;
+}
+
+/* Overdue Task */
+.overdue-card {
+    -fx-border-color: -fx-danger;
+    -fx-border-width: 2;
+}
+
+/* Today Task */
+.today-card {
+    -fx-border-color: -fx-primary;
+    -fx-border-width: 2;
+}
+
+/* Dialog */
+.dialog-pane {
+    -fx-background-color: -fx-bg-primary;
+}
+
+/* Separator */
+.separator {
+    -fx-background-color: -fx-border-color;
+}
+
+/* Tab Pane */
+.tab-pane {
+    -fx-background-color: -fx-bg-secondary;
+}
+
+.tab {
+    -fx-background-color: -fx-bg-tertiary;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.tab:selected {
+    -fx-background-color: -fx-bg-primary;
+}
