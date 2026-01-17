@@ -133,9 +133,15 @@ class TaskFlow:
                    description: Optional[str] = None,
                    priority: Optional[str] = None,
                    status: Optional[str] = None) -> bool:
-        """Update a task."""
+        """Update a task. Returns False if task not found or invalid values provided."""
         task = self.get_task(task_id)
         if not task:
+            return False
+        
+        # Validate priority and status before applying changes
+        if priority is not None and priority not in ['low', 'medium', 'high']:
+            return False
+        if status is not None and status not in ['pending', 'in_progress', 'completed', 'cancelled']:
             return False
         
         if title is not None:
@@ -293,7 +299,11 @@ def main():
                 print(f"Task {task_id} updated successfully!")
                 print(tf.get_task(task_id))
             else:
-                print(f"Task with ID {task_id} not found.")
+                task = tf.get_task(task_id)
+                if not task:
+                    print(f"Error: Task with ID {task_id} not found.")
+                else:
+                    print(f"Error: Invalid values provided. Valid priority: low, medium, high. Valid status: pending, in_progress, completed, cancelled.")
         except ValueError:
             print("Error: Invalid task ID")
     

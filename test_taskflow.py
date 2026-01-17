@@ -150,6 +150,23 @@ class TestTaskFlow(unittest.TestCase):
         success = self.tf.update_task(999, title="New Title")
         self.assertFalse(success)
     
+    def test_update_task_invalid_values(self):
+        """Test updating a task with invalid priority or status."""
+        task = self.tf.create_task("Test Task")
+        
+        # Test invalid priority
+        success = self.tf.update_task(task.id, priority="invalid")
+        self.assertFalse(success)
+        
+        # Test invalid status
+        success = self.tf.update_task(task.id, status="invalid")
+        self.assertFalse(success)
+        
+        # Verify task unchanged
+        updated_task = self.tf.get_task(task.id)
+        self.assertEqual(updated_task.priority, "medium")  # default
+        self.assertEqual(updated_task.status, "pending")  # default
+    
     def test_delete_task(self):
         """Test deleting a task."""
         task = self.tf.create_task("Task to Delete")
